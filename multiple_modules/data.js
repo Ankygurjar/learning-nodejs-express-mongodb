@@ -6,5 +6,11 @@ var add = (a, b)=>{
   return(`The sum of given digits is ${a+b}`);
 };
 
-module.exports.values = values; //Here we are passing 'values' module through module.exports.values.
-module.exports.add = add; //Here we are passing 'add' module through module.exports.add.
+/*
+  Since we have two modules here (values and add) we have to pass both the modules as objects.
+*/
+
+module.exports = {
+  values:values,
+  add:add
+}
