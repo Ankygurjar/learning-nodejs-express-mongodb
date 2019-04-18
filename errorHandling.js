@@ -1,6 +1,8 @@
-var fs = require('fs');
+//In this program we are doing the Error Handling activity asynchrously. Since, Node Js is asynchronous so we cannot use try,catch exception in Node Js
 
-fs.readFile('dat',(error, data)=>{
+var fs = require('fs');// Here we are imprting the inbuilt 'fs' module of Node Js.
+
+fs.readFile('dat',(error, data)=>{ //Since we have to output the error so we have to make an error, hence I have used an unvalid file name.
   if(error){
     throw error;
   }
@@ -9,6 +11,6 @@ fs.readFile('dat',(error, data)=>{
   }
 });
 
-process.on("uncaughtException", (error)=>{
+process.on("uncaughtException", (error)=>{ // Here uncaughtException is playing role as an inbuilt error event
   console.log("Unexpected error was caught");
 });
